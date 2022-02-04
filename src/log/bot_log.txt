@@ -1,0 +1,126 @@
+2022-02-04 05:34:07,128 Using proactor: IocpProactor
+2022-02-04 05:34:07,132 PyNaCl is not installed, voice will NOT be supported
+2022-02-04 05:34:07,133 on_ready has successfully been registered as an event
+2022-02-04 05:34:07,133 logging in using static token
+2022-02-04 05:34:07,287 GET https://discord.com/api/v7/users/@me with None has returned 200
+2022-02-04 05:34:07,287 GET https://discord.com/api/v7/users/@me has received {'id': '938991674611359764', 'username': 'Mao Zedong', 'avatar': None, 'discriminator': '9386', 'public_flags': 0, 'flags': 0, 'bot': True, 'banner': None, 'banner_color': None, 'accent_color': None, 'bio': '', 'locale': 'en-US', 'mfa_enabled': False, 'email': None, 'verified': True}
+2022-02-04 05:34:07,319 GET https://discord.com/api/v7/gateway with None has returned 200
+2022-02-04 05:34:07,319 GET https://discord.com/api/v7/gateway has received {'url': 'wss://gateway.discord.gg'}
+2022-02-04 05:34:07,414 Created websocket connected to wss://gateway.discord.gg?encoding=json&v=6&compress=zlib-stream
+2022-02-04 05:34:07,414 Dispatching event socket_raw_receive
+2022-02-04 05:34:07,414 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 10, 'd': {'heartbeat_interval': 41250, '_trace': ['["gateway-prd-main-8vbh",{"micros":0.0}]']}}
+2022-02-04 05:34:07,414 Dispatching event socket_response
+2022-02-04 05:34:07,415 Dispatching event socket_raw_send
+2022-02-04 05:34:07,415 Dispatching event socket_raw_send
+2022-02-04 05:34:07,415 Shard ID None has sent the IDENTIFY payload.
+2022-02-04 05:34:07,455 Dispatching event socket_raw_receive
+2022-02-04 05:34:07,455 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:34:07,455 Dispatching event socket_response
+2022-02-04 05:34:07,541 Dispatching event socket_raw_receive
+2022-02-04 05:34:07,541 For Shard ID None: WebSocket Event: {'t': 'READY', 's': 1, 'op': 0, 'd': {'v': 6, 'user_settings': {}, 'user': {'verified': True, 'username': 'Mao Zedong', 'mfa_enabled': False, 'id': '938991674611359764', 'flags': 0, 'email': None, 'discriminator': '9386', 'bot': True, 'avatar': None}, 'session_id': '8211bf093ddb84d6ef6cd1433f4fa339', 'relationships': [], 'private_channels': [], 'presences': [], 'guilds': [{'unavailable': True, 'id': '810264460807241788'}], 'guild_join_requests': [], 'geo_ordered_rtc_regions': ['atlanta', 'us-east', 'newark', 'us-central', 'us-south'], 'application': {'id': '938991674611359764', 'flags': 262144}, '_trace': ['["gateway-prd-main-8vbh",{"micros":87320,"calls":["discord-sessions-blue-prd-2-146",{"micros":85773,"calls":["start_session",{"micros":71273,"calls":["api-prd-main-mg3d",{"micros":67859,"calls":["get_user",{"micros":6725},"add_authorized_ip",{"micros":10586},"get_guilds",{"micros":11149},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":11342,"calls":[]}]}]}]']}}
+2022-02-04 05:34:07,541 Dispatching event socket_response
+2022-02-04 05:34:07,541 Shard ID None has connected to Gateway: ["gateway-prd-main-8vbh",{"micros":87320,"calls":["discord-sessions-blue-prd-2-146",{"micros":85773,"calls":["start_session",{"micros":71273,"calls":["api-prd-main-mg3d",{"micros":67859,"calls":["get_user",{"micros":6725},"add_authorized_ip",{"micros":10586},"get_guilds",{"micros":11149},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":1,"calls":[]},"presence_connect",{"micros":11342,"calls":[]}]}]}] (Session ID: 8211bf093ddb84d6ef6cd1433f4fa339).
+2022-02-04 05:34:07,545 Dispatching event connect
+2022-02-04 05:34:07,545 Dispatching event socket_raw_receive
+2022-02-04 05:34:07,545 For Shard ID None: WebSocket Event: {'t': 'GUILD_CREATE', 's': 2, 'op': 0, 'd': {'icon': None, 'channels': [{'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Text Channels', 'id': '810264460807241789'}, {'type': 4, 'position': 0, 'permission_overwrites': [], 'name': 'Voice Channels', 'id': '810264460807241790'}, {'type': 0, 'topic': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '810264460807241789', 'name': 'general', 'last_message_id': '939106336879288361', 'id': '810264460807241791'}, {'user_limit': 0, 'type': 2, 'rtc_region': None, 'rate_limit_per_user': 0, 'position': 0, 'permission_overwrites': [], 'parent_id': '810264460807241790', 'name': 'General', 'last_message_id': None, 'id': '810264460807241792', 'bitrate': 64000}], 'system_channel_id': '810264460807241791', 'verification_level': 0, 'name': 'bot test server', 'hub_type': None, 'stickers': [], 'description': None, 'mfa_level': 0, 'splash': None, 'owner_id': '170720982300884992', 'application_id': None, 'stage_instances': [], 'application_command_counts': {'3': 0, '2': 0, '1': 0}, 'nsfw_level': 0, 'max_video_channel_users': 25, 'emojis': [], 'premium_subscription_count': 0, 'member_count': 4, 'joined_at': '2022-02-04T03:57:16.864545+00:00', 'embedded_activities': [], 'preferred_locale': 'en-US', 'lazy': True, 'members': [{'user': {'username': 'Mao Zedong', 'id': '938991674611359764', 'discriminator': '9386', 'bot': True, 'avatar': None}, 'roles': ['939006673308241973'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2022-02-04T03:57:16.864545+00:00', 'hoisted_role': None, 'deaf': False, 'communication_disabled_until': None, 'avatar': None}], 'afk_timeout': 300, 'max_members': 250000, 'afk_channel_id': None, 'unavailable': False, 'discovery_splash': None, 'threads': [], 'application_command_count': 0, 'default_message_notifications': 0, 'rules_channel_id': None, 'large': False, 'premium_tier': 0, 'explicit_content_filter': 0, 'features': [], 'id': '810264460807241788', 'banner': None, 'region': 'deprecated', 'guild_scheduled_events': [], 'guild_hashes': {'version': 1, 'roles': {'omitted': False, 'hash': 'yiyLFoU1PHg'}, 'metadata': {'omitted': False, 'hash': 'G2043ds1n1Y'}, 'channels': {'omitted': False, 'hash': 'YbHvGGKP/hk'}}, 'public_updates_channel_id': None, 'nsfw': False, 'vanity_url_code': None, 'roles': [{'unicode_emoji': None, 'position': 0, 'permissions_new': '1071698660929', 'permissions': 104320577, 'name': '@everyone', 'mentionable': False, 'managed': False, 'id': '810264460807241788', 'icon': None, 'hoist': False, 'color': 0}, {'unicode_emoji': None, 'tags': {'bot_id': '809618065305632788'}, 'position': 5, 'permissions_new': '4294967304', 'permissions': 8, 'name': 'Mantis Bot', 'mentionable': False, 'managed': True, 'id': '810271602775687189', 'icon': None, 'hoist': False, 'color': 0}, {'unicode_emoji': None, 'position': 4, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': 'Administrator', 'mentionable': False, 'managed': False, 'id': '810274962346475541', 'icon': None, 'hoist': True, 'color': 11342935}, {'unicode_emoji': None, 'position': 3, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': 'test role 1', 'mentionable': False, 'managed': False, 'id': '810276451991420949', 'icon': None, 'hoist': False, 'color': 3066993}, {'unicode_emoji': None, 'position': 2, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': 'test role 2', 'mentionable': False, 'managed': False, 'id': '810276492726108172', 'icon': None, 'hoist': False, 'color': 3447003}, {'unicode_emoji': None, 'position': 1, 'permissions_new': '6546771521', 'permissions': 104320577, 'name': 'Parole', 'mentionable': False, 'managed': False, 'id': '810281245052633108', 'icon': None, 'hoist': False, 'color': 15277667}, {'unicode_emoji': None, 'tags': {'bot_id': '938991674611359764'}, 'position': 1, 'permissions_new': '8', 'permissions': 8, 'name': 'Mao Zedong', 'mentionable': False, 'managed': True, 'id': '939006673308241973', 'icon': None, 'hoist': False, 'color': 0}], 'system_channel_flags': 0, 'presences': [], 'voice_states': [], 'premium_progress_bar_enabled': False}}
+2022-02-04 05:34:07,545 Dispatching event socket_response
+2022-02-04 05:34:07,546 Dispatching event guild_available
+2022-02-04 05:34:09,559 Dispatching event ready
+2022-02-04 05:34:09,559 Social credit system online
+2022-02-04 05:34:12,442 Dispatching event socket_raw_receive
+2022-02-04 05:34:12,442 For Shard ID None: WebSocket Event: {'t': 'TYPING_START', 's': 3, 'op': 0, 'd': {'user_id': '170720982300884992', 'timestamp': 1643970852, 'member': {'user': {'username': 'makona', 'id': '170720982300884992', 'discriminator': '4612', 'avatar': 'a76a07349517f7e68348d63d41102e4e'}, 'roles': ['810276451991420949', '810274962346475541'], 'mute': False, 'joined_at': '2021-02-13T21:41:41.449000+00:00', 'hoisted_role': '810274962346475541', 'deaf': False}, 'channel_id': '810264460807241791', 'guild_id': '810264460807241788'}}
+2022-02-04 05:34:12,442 Dispatching event socket_response
+2022-02-04 05:34:12,442 Dispatching event typing
+2022-02-04 05:34:15,387 Dispatching event socket_raw_receive
+2022-02-04 05:34:15,387 For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 4, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2022-02-04T10:34:15.198000+00:00', 'referenced_message': None, 'pinned': False, 'nonce': '939106575157559296', 'mentions': [{'username': 'makona', 'public_flags': 0, 'member': {'roles': ['810276451991420949', '810274962346475541'], 'mute': False, 'joined_at': '2021-02-13T21:41:41.449000+00:00', 'hoisted_role': '810274962346475541', 'deaf': False}, 'id': '170720982300884992', 'discriminator': '4612', 'avatar': 'a76a07349517f7e68348d63d41102e4e'}], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': ['810276451991420949', '810274962346475541'], 'mute': False, 'joined_at': '2021-02-13T21:41:41.449000+00:00', 'hoisted_role': '810274962346475541', 'deaf': False}, 'id': '939106574838943755', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': '*censor <@!170720982300884992> 2', 'components': [], 'channel_id': '810264460807241791', 'author': {'username': 'makona', 'public_flags': 0, 'id': '170720982300884992', 'discriminator': '4612', 'avatar': 'a76a07349517f7e68348d63d41102e4e'}, 'attachments': [], 'guild_id': '810264460807241788'}}
+2022-02-04 05:34:15,387 Dispatching event socket_response
+2022-02-04 05:34:15,387 Dispatching event message
+2022-02-04 05:34:15,387 Dispatching event command
+2022-02-04 05:34:15,388 Creating censored users file
+2022-02-04 05:34:15,388 Censorship delay is set to 2 minutes
+2022-02-04 05:34:15,470 Dispatching event socket_raw_receive
+2022-02-04 05:34:15,470 For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 5, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2022-02-04T10:34:15.302000+00:00', 'referenced_message': None, 'pinned': False, 'mentions': [], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': ['939006673308241973'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2022-02-04T03:57:16.864545+00:00', 'hoisted_role': None, 'deaf': False, 'communication_disabled_until': None, 'avatar': None}, 'id': '939106575275135025', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': 'Censorship delay is set to 2 minutes', 'components': [], 'channel_id': '810264460807241791', 'author': {'username': 'Mao Zedong', 'public_flags': 0, 'id': '938991674611359764', 'discriminator': '9386', 'bot': True, 'avatar': None}, 'attachments': [], 'guild_id': '810264460807241788'}}
+2022-02-04 05:34:15,470 Dispatching event socket_response
+2022-02-04 05:34:15,470 Dispatching event message
+2022-02-04 05:34:15,493 POST https://discord.com/api/v7/channels/810264460807241791/messages with {"content":"Censorship delay is set to 2 minutes"} has returned 200
+2022-02-04 05:34:15,493 POST https://discord.com/api/v7/channels/810264460807241791/messages has received {'id': '939106575275135025', 'type': 0, 'content': 'Censorship delay is set to 2 minutes', 'channel_id': '810264460807241791', 'author': {'id': '938991674611359764', 'username': 'Mao Zedong', 'avatar': None, 'discriminator': '9386', 'public_flags': 0, 'bot': True}, 'attachments': [], 'embeds': [], 'mentions': [], 'mention_roles': [], 'pinned': False, 'mention_everyone': False, 'tts': False, 'timestamp': '2022-02-04T10:34:15.302000+00:00', 'edited_timestamp': None, 'flags': 0, 'components': [], 'referenced_message': None}
+2022-02-04 05:34:15,493 User <@170720982300884992> has been registered for censorship
+2022-02-04 05:34:15,590 Dispatching event socket_raw_receive
+2022-02-04 05:34:15,591 For Shard ID None: WebSocket Event: {'t': 'MESSAGE_CREATE', 's': 6, 'op': 0, 'd': {'type': 0, 'tts': False, 'timestamp': '2022-02-04T10:34:15.425000+00:00', 'referenced_message': None, 'pinned': False, 'mentions': [{'username': 'makona', 'public_flags': 0, 'member': {'roles': ['810276451991420949', '810274962346475541'], 'mute': False, 'joined_at': '2021-02-13T21:41:41.449000+00:00', 'hoisted_role': '810274962346475541', 'deaf': False}, 'id': '170720982300884992', 'discriminator': '4612', 'avatar': 'a76a07349517f7e68348d63d41102e4e'}], 'mention_roles': [], 'mention_everyone': False, 'member': {'roles': ['939006673308241973'], 'premium_since': None, 'pending': False, 'nick': None, 'mute': False, 'joined_at': '2022-02-04T03:57:16.864545+00:00', 'hoisted_role': None, 'deaf': False, 'communication_disabled_until': None, 'avatar': None}, 'id': '939106575791063050', 'flags': 0, 'embeds': [], 'edited_timestamp': None, 'content': 'User <@170720982300884992> has been registered for censorship', 'components': [], 'channel_id': '810264460807241791', 'author': {'username': 'Mao Zedong', 'public_flags': 0, 'id': '938991674611359764', 'discriminator': '9386', 'bot': True, 'avatar': None}, 'attachments': [], 'guild_id': '810264460807241788'}}
+2022-02-04 05:34:15,591 Dispatching event socket_response
+2022-02-04 05:34:15,591 Dispatching event message
+2022-02-04 05:34:15,622 POST https://discord.com/api/v7/channels/810264460807241791/messages with {"content":"User <@170720982300884992> has been registered for censorship"} has returned 200
+2022-02-04 05:34:15,622 POST https://discord.com/api/v7/channels/810264460807241791/messages has received {'id': '939106575791063050', 'type': 0, 'content': 'User <@170720982300884992> has been registered for censorship', 'channel_id': '810264460807241791', 'author': {'id': '938991674611359764', 'username': 'Mao Zedong', 'avatar': None, 'discriminator': '9386', 'public_flags': 0, 'bot': True}, 'attachments': [], 'embeds': [], 'mentions': [{'id': '170720982300884992', 'username': 'makona', 'avatar': 'a76a07349517f7e68348d63d41102e4e', 'discriminator': '4612', 'public_flags': 0}], 'mention_roles': [], 'pinned': False, 'mention_everyone': False, 'tts': False, 'timestamp': '2022-02-04T10:34:15.425000+00:00', 'edited_timestamp': None, 'flags': 0, 'components': [], 'referenced_message': None}
+2022-02-04 05:34:15,623 Dispatching event command_completion
+2022-02-04 05:34:48,679 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:34:48,708 Dispatching event socket_raw_receive
+2022-02-04 05:34:48,708 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:34:48,708 Dispatching event socket_response
+2022-02-04 05:35:29,943 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:35:29,978 Dispatching event socket_raw_receive
+2022-02-04 05:35:29,978 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:35:29,978 Dispatching event socket_response
+2022-02-04 05:36:11,201 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:36:11,236 Dispatching event socket_raw_receive
+2022-02-04 05:36:11,236 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:36:11,236 Dispatching event socket_response
+2022-02-04 05:36:52,466 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:36:52,505 Dispatching event socket_raw_receive
+2022-02-04 05:36:52,506 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:36:52,506 Dispatching event socket_response
+2022-02-04 05:37:33,720 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:37:33,756 Dispatching event socket_raw_receive
+2022-02-04 05:37:33,756 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:37:33,756 Dispatching event socket_response
+2022-02-04 05:38:14,980 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:38:15,013 Dispatching event socket_raw_receive
+2022-02-04 05:38:15,013 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:38:15,013 Dispatching event socket_response
+2022-02-04 05:38:56,241 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:38:56,275 Dispatching event socket_raw_receive
+2022-02-04 05:38:56,275 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:38:56,276 Dispatching event socket_response
+2022-02-04 05:39:37,497 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:39:37,521 Dispatching event socket_raw_receive
+2022-02-04 05:39:37,521 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:39:37,521 Dispatching event socket_response
+2022-02-04 05:40:18,758 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:40:18,805 Dispatching event socket_raw_receive
+2022-02-04 05:40:18,805 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:40:18,805 Dispatching event socket_response
+2022-02-04 05:41:00,014 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:41:00,050 Dispatching event socket_raw_receive
+2022-02-04 05:41:00,050 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:41:00,050 Dispatching event socket_response
+2022-02-04 05:41:41,267 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:41:41,300 Dispatching event socket_raw_receive
+2022-02-04 05:41:41,300 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:41:41,300 Dispatching event socket_response
+2022-02-04 05:42:22,529 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:42:22,570 Dispatching event socket_raw_receive
+2022-02-04 05:42:22,570 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:42:22,570 Dispatching event socket_response
+2022-02-04 05:43:03,793 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:43:03,826 Dispatching event socket_raw_receive
+2022-02-04 05:43:03,826 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:43:03,826 Dispatching event socket_response
+2022-02-04 05:43:45,051 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:43:45,083 Dispatching event socket_raw_receive
+2022-02-04 05:43:45,083 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:43:45,083 Dispatching event socket_response
+2022-02-04 05:44:26,316 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:44:26,350 Dispatching event socket_raw_receive
+2022-02-04 05:44:26,350 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:44:26,350 Dispatching event socket_response
+2022-02-04 05:45:07,571 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:45:07,611 Dispatching event socket_raw_receive
+2022-02-04 05:45:07,611 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:45:07,611 Dispatching event socket_response
+2022-02-04 05:45:48,830 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:45:48,866 Dispatching event socket_raw_receive
+2022-02-04 05:45:48,866 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:45:48,866 Dispatching event socket_response
+2022-02-04 05:46:30,090 Keeping shard ID None websocket alive with sequence 6.
+2022-02-04 05:46:30,123 Dispatching event socket_raw_receive
+2022-02-04 05:46:30,123 For Shard ID None: WebSocket Event: {'t': None, 's': None, 'op': 11, 'd': None}
+2022-02-04 05:46:30,123 Dispatching event socket_response
