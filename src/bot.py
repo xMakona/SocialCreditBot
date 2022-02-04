@@ -28,6 +28,11 @@ class SupremeRuler(Client):
     async def censor(self):
         await supreme_commands.censor(self)
 
+    @bot.command(name='sanction', help='No longer censors a user\'s messages, they become sanctioned by the state.')
+    @commands.has_any_role('Administrator', 'Developer')
+    async def sanction(self):
+        await supreme_commands.sanction(self)
+
     
 
     # @bot.event

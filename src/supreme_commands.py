@@ -16,7 +16,7 @@ async def censor(context):
     try:
         with open(config.CENSORED_USERS_FILEPATH, 'r') as censored_users_file:
             censored_users = load(censored_users_file)
-    except OSError: # Censored users file does not exist, so it will be created at the end of the function
+    except: # Censored users file does not exist, so it will be created at the end of the function
         logging.info(f"Creating censored users file")
 
     try:
@@ -47,6 +47,40 @@ async def censor(context):
             member_id = '<@' + str(member.id) + '>'
             logging.info(f"User {member_id} has been registered for censorship")
             await context.send(f"User {member_id} has been registered for censorship")
+        # Rewrite censored users file with updated data
+        with open(config.CENSORED_USERS_FILEPATH, 'w') as censored_users_file:
+            dump(censored_users, censored_users_file)
+    except:
+        logging.exception(f"Error during censorship registration")
+        await context.send('Error during censorship registration')
+
+async def sanction(context):
+    censored_users = {}
+    guild = context.message.guild
+
+    try:
+        with open(config.CENSORED_USERS_FILEPATH, 'r') as censored_users_file:
+            censored_users = load(censored_users_file)
+    except: # Censored users file does not exist, so it will be created at the end of the function
+        logging.info(f"There are no users currently registered for censorship")
+        await context.send(f"There are no users currently registered for censorship")
+        return
+
+    try:
+        for member in context.message.mentions:
+            member_id = '<@' + str(member.id) + '>'
+            if str(guild.id) in censored_users: # Remove user from guild's censored user list
+                if str(member.id) in censored_users[str(guild.id)]:
+                    del censored_users[str(guild.id)][str(member.id)]
+                    logging.info(f"{member_id} is no longer registered for censorship")
+                    await context.send(f"{member_id} is no longer registered for censorship")
+                else:
+                    logging.info(f"{member_id} is not registered for censorship")
+                    await context.send(f"{member_id} is not registered for censorship")
+            else: # If guild does not exist then we cannot remove the user
+                logging.info(f"There are no users currently registered for censorship")
+                await context.send(f"There are no users currently registered for censorship")
+                return
         # Rewrite censored users file with updated data
         with open(config.CENSORED_USERS_FILEPATH, 'w') as censored_users_file:
             dump(censored_users, censored_users_file)
