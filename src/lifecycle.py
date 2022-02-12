@@ -6,9 +6,7 @@ import math
 
 class LifeCycle:
     def __init__(self):
-        os.makedirs(os.path.dirname(config.LIFECYCLE_LOG_FILEPATH), exist_ok=True)
         os.makedirs(os.path.dirname(config.CENSORED_USERS_FILEPATH), exist_ok=True)
-        logging.basicConfig(filename=config.LIFECYCLE_LOG_FILEPATH, format='%(asctime)s %(message)s', level=logging.INFO)
         self.censored_users = {}
         try:
             with open(config.CENSORED_USERS_FILEPATH, 'r') as censored_users_file:
