@@ -3,16 +3,23 @@ import os
 import logging
 import config
 import math
+import datetime
+import utils
+
+def load_censored_users():
+    os.makedirs(os.path.dirname(config.CENSORED_USERS_FILEPATH), exist_ok=True)
+    try:
+        with open(config.CENSORED_USERS_FILEPATH, 'r') as censored_users_file:
+            return load(censored_users_file)
+    except: # Censored users file does not exist, so it will be created at the end of the function
+        logging.info(f"Censored users file not found")
+        return {}
 
 class LifeCycle:
     def __init__(self):
-        os.makedirs(os.path.dirname(config.CENSORED_USERS_FILEPATH), exist_ok=True)
-        self.censored_users = {}
-        try:
-            with open(config.CENSORED_USERS_FILEPATH, 'r') as censored_users_file:
-                self.censored_users = load(censored_users_file)
-        except: # Censored users file does not exist, so it will be created at the end of the function
-            logging.info(f"Censored users file not found")
+        self.censored_users = load_censored_users()
+        self.channels_dict = {}
+        self.messages_to_delete = {}
         
     async def censor(self, context):
         guild = context.message.guild
@@ -84,5 +91,23 @@ class LifeCycle:
         except:
             logging.exception(f"Error during censorship registration")
             await context.send('Error during censorship registration')
+
+    async def process_message(self, message):
+        guild_id = str(message.guild.id)
+        author_id = str(message.author.id)
+        if guild_id in self.censored_users:
+            if author_id in self.censored_users[guild_id]:
+                user = self.censored_users[guild_id][author_id]
+                time_key = utils.get_time_key(message.created_at, user['censor_delay'])
+                if not time_key in self.messages_to_delete:
+                    self.messages_to_delete[time_key] = []
+                self.messages_to_delete[time_key].append(message)
+            else: # Author of the message is not censored in this guild, so return
+                return
+        else: # There are no censored users in this guild, so return
+            return
+
+    async def delete_censored_messages(self, discord_client):
+        return
 
     

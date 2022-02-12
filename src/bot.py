@@ -23,9 +23,10 @@ async def on_ready():
 class SupremeRuler(Client):
     #####################################################     EVENTS     ###############################################################
 
-    # @discord_bot.event
-    # async def on_message(self):
-    #     await discord_bot.process_commands(self.message)
+    @discord_bot.event
+    async def on_message(message):
+        await discord_bot.process_commands(message)
+        await lifecycle.process_message(message)
 
     #####################################################     COMMANDS     ###############################################################
 
