@@ -49,14 +49,19 @@ class SupremeRuler(Client):
 
     #####################################################     COMMANDS     ###############################################################
 
-    @discord_bot.command(name='censor', help='Registers a user for censorship, deletes each message the user makes <minutes> after its creation.', usage='*censor @<user> <minutes>')
+    @discord_bot.command(name='censor', help='Registers <@user> for censorship, deletes each message <@user> makes <minutes> after they create it.', usage='*censor <@user> <minutes>')
     @commands.has_any_role('Administrator', 'Developer')
     async def censor(self):
         await lifecycle.censor(self)
 
-    @discord_bot.command(name='sanction', help='No longer censors a user\'s messages.', usage='*sanction @<user>')
+    @discord_bot.command(name='sanction', help='No longer censors a <@user>\'s messages.', usage='*sanction <@user>')
     @commands.has_any_role('Administrator', 'Developer')
     async def sanction(self):
         await lifecycle.sanction(self)
+
+    @discord_bot.command(name='purge', help='Purges all of <@user>\'s messages from <#channel>, if no channels are mentioned then the channel the command is issued in is purged.', usage='*purge @<user> #<channel>')
+    @commands.has_any_role('Administrator', 'Developer')
+    async def sanction(self):
+        await lifecycle.purge(self)
 
 discord_bot.run(TOKEN)

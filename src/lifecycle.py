@@ -117,6 +117,9 @@ class LifeCycle:
             logging.exception(f"Error during censorship registration")
             await context.send('Error during censorship registration')
 
+    async def purge(self, context):
+        return
+
     # Processes messages from guilds the bot is in
     async def process_message(self, message):
         guild_id = str(message.guild.id)
