@@ -1,4 +1,4 @@
 src/__pycache__
-src/log
-src/data
+/logs
+/data
 src/.env
