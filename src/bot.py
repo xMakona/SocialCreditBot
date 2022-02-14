@@ -11,13 +11,17 @@ import utils
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
+BOT_PREFIX = os.getenv('BOT_PREFIX')
 
-discord_bot = commands.Bot(command_prefix='*')
+discord_bot = commands.Bot(command_prefix=BOT_PREFIX)
 lifecycle = LifeCycle()
+# Prevents multiple lifecycle_loop tasks
 lifecycle_active = False
+# Creates directory for log file if it does not exist
 os.makedirs(os.path.dirname(config.BOT_LOG_FILEPATH), exist_ok=True)
 logging.basicConfig(filename=config.BOT_LOG_FILEPATH, format='%(asctime)s %(message)s', level=logging.INFO)
 
+# Loop function that dispatches life cycle tasks every minute
 async def lifecycle_loop():
     global lifecycle_active
     lifecycle_active = True
