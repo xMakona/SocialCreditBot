@@ -3,7 +3,7 @@ import os
 import logging
 import config
 import math
-import datetime
+import asyncio
 import utils
 
 def load_censored_users():
@@ -107,7 +107,7 @@ class LifeCycle:
         else: # There are no censored users in this guild, so return
             return
 
-    async def delete_censored_messages(self, discord_client):
-        return
-
-    
+    async def delete_censored_messages(self, time_key):
+        if(time_key in self.messages_to_delete):
+            await asyncio.gather(*[message.delete() for message in self.messages_to_delete[time_key]])
+            del self.messages_to_delete[time_key]
