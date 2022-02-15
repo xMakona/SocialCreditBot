@@ -19,7 +19,7 @@ async def lifecycle_loop(discord_bot, lifecycle):
         sleep_duration = 60 - current_time.second
         await asyncio.sleep(sleep_duration)
 
-# Put command signatures here
+# Put admin command signatures here
 class Admin(commands.Cog):
     def __init__(self, discord_bot, lifecycle):
         self.discord_bot = discord_bot

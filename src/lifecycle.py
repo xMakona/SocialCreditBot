@@ -117,6 +117,7 @@ class LifeCycle:
             logging.exception(f"Error during censorship registration")
             await context.send("Error during censorship registration")
 
+    # Mass deletes messages from text channels
     async def purge(self, context):
         channels = context.message.channel_mentions
         mentions = context.message.mentions
@@ -131,7 +132,7 @@ class LifeCycle:
         except:
             logging.info(f"No limit given, purge limit is set to {purge_limit} messages")
 
-
+        # Calls purge API depending on the given criteria
         if(len(mentions) and len(channels)):
             for member in mentions:
                 def purge_check(m):
