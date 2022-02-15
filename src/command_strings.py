@@ -1,8 +1,3 @@
-group_names = {
-    'admin': 'Admin use only',
-    'general': 'General use'
-}
-
 censor = {
     'name': 'censor',
     'help': 'Registers <@user> for censorship, deletes each message <@user> makes <minutes> after they create it.',

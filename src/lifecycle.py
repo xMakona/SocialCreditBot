@@ -44,12 +44,12 @@ class LifeCycle:
             content = context.message.content.split(" ")
             censor_delay = float(content[len(content) - 1])
             censor_delay = math.ceil(censor_delay)
-            logging.info(f'Censorship delay is set to {censor_delay} minutes')
-            await context.send(f'Censorship delay is set to {censor_delay} minutes')
+            logging.info(f"Censorship delay is set to {censor_delay} {'minutes' if censor_delay > 1 else 'minute'}")
+            await context.send(f"Censorship delay is set to {censor_delay} {'minutes' if censor_delay > 1 else 'minute'}")
         # If no delay length is found, default delay length is used
         except:
-            logging.info(f'No time given, censorship delay set to {censor_delay} minutes')
-            await context.send(f'No time given, censorship delay set to {censor_delay} minutes')
+            logging.info(f"No time given, censorship delay set to {censor_delay} minutes")
+            await context.send(f"No time given, censorship delay set to {censor_delay} minutes")
 
         # Tries to add the users to self.censored_users dict
         try:
@@ -68,15 +68,15 @@ class LifeCycle:
                         }
                     }
                 member_id = '<@' + str(member.id) + '>'
-                logging.info(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} minutes")
-                await context.send(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} minutes")
+                logging.info(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} {'minutes' if censor_delay > 1 else 'minute'}")
+                await context.send(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} {'minutes' if censor_delay > 1 else 'minute'}")
             # Rewrite censored users file with updated data
             with open(config.CENSORED_USERS_FILEPATH, 'w') as censored_users_file:
                 dump(self.censored_users, censored_users_file)
         # Users could not be added to censored users file
         except:
             logging.exception(f"Error during censorship registration")
-            await context.send('Error during censorship registration')
+            await context.send("Error during censorship registration")
     
     # Removes users from the self.censored_users dict
     async def sanction(self, context):
@@ -115,7 +115,7 @@ class LifeCycle:
         # Users could not be removed from censored users file
         except:
             logging.exception(f"Error during censorship registration")
-            await context.send('Error during censorship registration')
+            await context.send("Error during censorship registration")
 
     async def purge(self, context):
         channels = context.message.channel_mentions
@@ -126,10 +126,10 @@ class LifeCycle:
         try:
             content = context.message.content.split(" ")
             purge_limit = int(content[len(content) - 1])
-            logging.info(f'Purge limit is set to {purge_limit} messages')
+            logging.info(f"Purge limit is set to {purge_limit} messages")
         # If no purge limit is found, default purge limit is used
         except:
-            logging.info(f'No limit given, purge limit is set to {purge_limit} messages')
+            logging.info(f"No limit given, purge limit is set to {purge_limit} messages")
 
 
         if(len(mentions) and len(channels)):
