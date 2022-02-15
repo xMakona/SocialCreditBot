@@ -68,8 +68,8 @@ class LifeCycle:
                         }
                     }
                 member_id = '<@' + str(member.id) + '>'
-                logging.info(f"User {member_id} has been registered for censorship")
-                await context.send(f"User {member_id} has been registered for censorship")
+                logging.info(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} minutes")
+                await context.send(f"User {member_id} has been registered for censorship, their messages will be deleted after {censor_delay} minutes")
             # Rewrite censored users file with updated data
             with open(config.CENSORED_USERS_FILEPATH, 'w') as censored_users_file:
                 dump(self.censored_users, censored_users_file)
@@ -118,7 +118,37 @@ class LifeCycle:
             await context.send('Error during censorship registration')
 
     async def purge(self, context):
-        return
+        channels = context.message.channel_mentions
+        mentions = context.message.mentions
+        purge_limit = config.DEFAULT_PURGE_LIMIT
+
+        # Tries to retrieve a purge limit from the message
+        try:
+            content = context.message.content.split(" ")
+            purge_limit = int(content[len(content) - 1])
+            logging.info(f'Purge limit is set to {purge_limit} messages')
+        # If no purge limit is found, default purge limit is used
+        except:
+            logging.info(f'No limit given, purge limit is set to {purge_limit} messages')
+
+
+        if(len(mentions) and len(channels)):
+            for member in mentions:
+                def purge_check(m):
+                    return m.author == member
+                for channel in channels:
+                    await channel.purge(limit=purge_limit, check=purge_check)
+        elif(len(mentions)):
+            for member in mentions:
+                def purge_check(m):
+                    return m.author == member
+                await context.message.channel.purge(limit=purge_limit, check=purge_check)
+        elif(len(channels)):
+            for channel in channels:
+                await channel.purge(limit=purge_limit)
+        else:
+            await context.message.channel.purge(limit=purge_limit)
+
 
     # Processes messages from guilds the bot is in
     async def process_message(self, message):

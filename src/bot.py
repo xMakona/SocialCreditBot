@@ -8,6 +8,7 @@ import logging
 import asyncio
 import datetime
 import utils
+import command_strings
 
 load_dotenv()
 TOKEN = os.getenv('TOKEN')
@@ -48,19 +49,18 @@ class SupremeRuler(Client):
         await lifecycle.process_message(message)
 
     #####################################################     COMMANDS     ###############################################################
-
-    @discord_bot.command(name='censor', help='Registers <@user> for censorship, deletes each message <@user> makes <minutes> after they create it.', usage='*censor <@user> <minutes>')
-    @commands.has_any_role('Administrator', 'Developer')
+    @discord_bot.command(name=command_strings.censor['name'], help=command_strings.censor['help'], usage=command_strings.censor['usage'])
+    @commands.has_guild_permissions(administrator=True)
     async def censor(self):
         await lifecycle.censor(self)
 
-    @discord_bot.command(name='sanction', help='No longer censors a <@user>\'s messages.', usage='*sanction <@user>')
-    @commands.has_any_role('Administrator', 'Developer')
+    @discord_bot.command(name=command_strings.sanction['name'], help=command_strings.sanction['help'], usage=command_strings.sanction['usage'])
+    @commands.has_guild_permissions(administrator=True)
     async def sanction(self):
         await lifecycle.sanction(self)
 
-    @discord_bot.command(name='purge', help='Purges all of <@user>\'s messages from <#channel>, if no channels are mentioned then the channel the command is issued in is purged.', usage='*purge @<user> #<channel>')
-    @commands.has_any_role('Administrator', 'Developer')
+    @discord_bot.command(name=command_strings.purge['name'], help=command_strings.purge['help'], usage=command_strings.purge['usage'])
+    @commands.has_guild_permissions(administrator=True)
     async def sanction(self):
         await lifecycle.purge(self)
 

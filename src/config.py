@@ -7,3 +7,4 @@ CENSORED_RECORDS_FILEPATH = '../data/censored_records.txt'
 
 # Default values
 DEFAULT_CENSOR_TIME = 120 # time in minutes
+DEFAULT_PURGE_LIMIT = 500 # number of messages to purge
