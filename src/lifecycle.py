@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from json import dump, load
 import os
 import logging

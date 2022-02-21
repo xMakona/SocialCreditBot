@@ -1,3 +1,5 @@
+#!/bin/python3
+
 censor = {
     'name': 'censor',
     'help': 'Registers <@user> for censorship, deletes each message <@user> makes <minutes> after they create it. Supports multiple mentions in one command.',

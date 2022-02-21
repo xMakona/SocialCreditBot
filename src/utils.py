@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import datetime
 
 # Creates a dict key using the given time and stripping any seconds or microseconds

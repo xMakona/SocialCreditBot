@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # Log file names
 BOT_LOG_FILEPATH = '../logs/bot_log.txt'
 

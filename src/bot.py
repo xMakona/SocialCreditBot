@@ -1,3 +1,5 @@
+#!/bin/python3
+
 from discord import Client
 from discord.ext import commands
 from Cogs.admin_cog import Admin
